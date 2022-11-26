@@ -20,4 +20,9 @@ class Products extends Model
         'enable',
         'brand'
     ];
+
+
+    public function brand(){
+    	return $this->hasOne('App\Models\Brands','id','brand')->select('name','id');
+    }
 }
