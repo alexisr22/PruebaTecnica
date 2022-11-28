@@ -38,6 +38,7 @@ Route::get('/brand/{id}', 'BrandController@show');
 Route::delete('/brand/{id}', 'BrandController@destroy');
 
 Route::get('/products', 'ProductsController@index');
+Route::get('/products/brands', 'ProductsController@brands');
 Route::post('/products', 'ProductsController@store');
 Route::put('/products/{id}', 'ProductsController@update');
 Route::get('/products/{id}', 'ProductsController@show');

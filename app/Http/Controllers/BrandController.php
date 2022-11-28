@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Brands;
+use App\Http\Requests\BrandRequest;
 
 
 class BrandController extends Controller
@@ -25,7 +26,7 @@ class BrandController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(BrandRequest $request)
     {
         $brand = new Brands;
         $brand->fill($request->all());
@@ -73,4 +74,5 @@ class BrandController extends Controller
         $brand = Brands::findOrFail($id);
         return response()->json($brand->delete());
     }
+
 }

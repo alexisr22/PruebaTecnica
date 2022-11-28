@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Products;
+use App\Models\Brands;
+
 
 
 class ProductsController extends Controller
@@ -73,5 +75,11 @@ class ProductsController extends Controller
     {
         $product = Products::findOrFail($id);
         return response()->json($product->delete());
+    }
+
+    public function brands()
+    {
+        return Brands::all();
+
     }
 }
